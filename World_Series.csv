@@ -1,0 +1,77 @@
+Name,Year,Teams,Total Posts,Total Comments,Total Scores,Avg Sentiment (TextBlob),Avg Sentiment (Vader),Viewers (Millions)
+2024 World Series Game 1,2024,"Los Angeles Dodgers, New York Yankees",9,5,8,0.2099688820517312,0.7120444444444445,14.163
+2024 World Series Game 2,2024,"Los Angeles Dodgers, New York Yankees",10,5,9,0.2117906118412,0.7386299999999999,13.713
+2024 World Series Game 3,2024,"Los Angeles Dodgers, New York Yankees",7,5,6,0.1420674597149164,0.857157142857143,13.208
+2024 World Series Game 4,2024,"Los Angeles Dodgers, New York Yankees",8,5,7,0.1338050289340535,0.8701,16.275
+2024 World Series Game 5,2024,"Los Angeles Dodgers, New York Yankees",10,5,9,0.1198596797128994,0.88454,18.152
+2023 World Series Game 1,2023,"Texas Rangers, Arizona Diamondbacks",6,9,11,0.1530003720261462,0.9164,9.172
+2023 World Series Game 2,2023,"Texas Rangers, Arizona Diamondbacks",5,9,10,0.1825962181015657,0.91898,8.153
+2023 World Series Game 3,2023,"Texas Rangers, Arizona Diamondbacks",6,9,12,0.0854968484179714,0.7658166666666667,8.126
+2023 World Series Game 4,2023,"Texas Rangers, Arizona Diamondbacks",8,9,14,0.1228883234882566,0.7964,8.48
+2023 World Series Game 5,2023,"Texas Rangers, Arizona Diamondbacks",6,9,12,0.1103739564390188,0.7555333333333333,11.481
+2022 World Series Game 1,2022,"Houston Astros, Philadelphia Phillies",5,656,2112,0.1436829431022979,0.86782,11.475
+2022 World Series Game 2,2022,"Houston Astros, Philadelphia Phillies",5,656,2112,0.1436829431022979,0.86782,10.789
+2022 World Series Game 3,2022,"Houston Astros, Philadelphia Phillies",3,105,84,0.0111455356553395,0.9185333333333334,11.162
+2022 World Series Game 4,2022,"Houston Astros, Philadelphia Phillies",4,122,120,0.0359565543389072,0.7989999999999999,11.809
+2022 World Series Game 5,2022,"Houston Astros, Philadelphia Phillies",6,1605,9958,0.03549817056009,0.7333333333333334,12.786
+2023 World Series Game 6,2022,"Houston Astros, Philadelphia Phillies",9,1681,10057,0.0685717752797216,0.7207,12.549
+2021 World Series Game 1,2021,"Atlanta Braves, Houston Astros",12,1622,981,0.0538014317962616,0.9300416666666668,10.811
+2021 World Series Game 2,2021,"Atlanta Braves, Houston Astros",14,1818,1122,0.0262400045720505,0.8749214285714285,10.28
+2021 World Series Game 3,2021,"Atlanta Braves, Houston Astros",14,1642,1133,0.0423531262440434,0.8745928571428572,11.232
+2021 World Series Game 4,2021,"Atlanta Braves, Houston Astros",15,1591,1113,0.047879213260736,0.8390666666666667,10.511
+2021 World Series Game 5,2021,"Atlanta Braves, Houston Astros",12,1191,342,0.0827364268247214,0.8591416666666666,13.644
+2021 World Series Game 6,2021,"Atlanta Braves, Houston Astros",11,1228,337,0.0578941120448737,0.7973454545454547,14.14
+2020 World Series Game 1,2020,"Los Angeles Dodger, Tampa Bay Rays",7,1072,5528,0.1404798623995052,0.8342999999999999,9.353
+2020 World Series Game 2,2020,"Los Angeles Dodger, Tampa Bay Rays",7,159,305,0.1451996796193224,0.8314714285714285,9.184
+2020 World Series Game 3,2020,"Los Angeles Dodger, Tampa Bay Rays",6,155,265,0.1530008166987333,0.8129333333333334,8.156
+2020 World Series Game 4,2020,"Los Angeles Dodger, Tampa Bay Rays",6,155,265,0.1530008166987333,0.8129333333333334,9.332
+2020 World Series Game 5,2020,"Los Angeles Dodger, Tampa Bay Rays",6,155,265,0.1530008166987333,0.8129333333333334,10.059
+2020 World Series Game 6,2020,"Los Angeles Dodger, Tampa Bay Rays",1,25,30,0.3552609427609428,0.9445,12.819
+2019 World Series Game 1,2019,"Washington Nationals, Houston Astros",3,192,543,0.1141366474699808,0.6644666666666666,12.194
+2019 World Series Game 2,2019,"Washington Nationals, Houston Astros",3,192,543,0.1141366474699808,0.6644666666666666,11.925
+2019 World Series Game 3,2019,"Washington Nationals, Houston Astros",6,247,635,0.102245091411758,0.5582833333333334,12.22
+2019 World Series Game 4,2019,"Washington Nationals, Houston Astros",6,247,635,0.102245091411758,0.5582833333333334,10.219
+2019 World Series Game 5,2019,"Washington Nationals, Houston Astros",4,102,101,0.1218446368446368,0.5881000000000001,11.39
+2019 World Series Game 6,2019,"Washington Nationals, Houston Astros",3,55,92,0.0903535353535353,0.4520999999999999,16.425
+2019 World Series Game 7,2019,"Washington Nationals, Houston Astros",4,79,133,0.0890449134199133,0.5335500000000001,23.013
+2018 World Series Game 1,2018,"Boston Red Sox, Los Angeles Dodgers",4,237,1454,0.0920041424592324,0.985325,13.761
+2018 World Series Game 2,2018,"Boston Red Sox, Los Angeles Dodgers",4,237,1454,0.0920041424592324,0.985325,13.458
+2018 World Series Game 3,2018,"Boston Red Sox, Los Angeles Dodgers",4,237,1454,0.0920041424592324,0.985325,13.251
+2018 World Series Game 4,2018,"Boston Red Sox, Los Angeles Dodgers",4,237,1454,0.0920041424592324,0.985325,13.563
+2018 World Series Game 5,2018,"Boston Red Sox, Los Angeles Dodgers",3,72,162,0.0922092269826803,0.9984666666666668,17.634
+2017 World Series Game 1,2017,"Houston Astros, Los Angeles Dodgers",8,615,1116,0.0766180797206514,0.445575,14.968
+2017 World Series Game 2,2017,"Houston Astros, Los Angeles Dodgers",10,736,1222,0.0133517554431878,0.4347099999999999,15.483
+2017 World Series Game 3,2017,"Houston Astros, Los Angeles Dodgers",15,1006,1354,-0.0299752125809243,0.3520266666666666,15.676
+2017 World Series Game 4,2017,"Houston Astros, Los Angeles Dodgers",16,1202,1514,-0.0302906460692566,0.38870625,15.4
+2017 World Series Game 5,2017,"Houston Astros, Los Angeles Dodgers",16,934,804,-0.0753440770921479,0.3592,18.94
+2017 World Series Game 6,2017,"Houston Astros, Los Angeles Dodgers",15,1350,902,-0.1826094060529622,0.2475399999999999,22.229
+2017 World Series Game 7,2017,"Houston Astros, Los Angeles Dodgers",14,1388,905,-0.1677243024294519,0.2721714285714285,28.24
+2016 World Series Game 1,2016,"Chicago Cubs, Cleveland Indians",4,79,18,0.0537405303030303,0.20875,19.368
+2016 World Series Game 2,2016,"Chicago Cubs, Cleveland Indians",5,384,192,0.0230921393421393,0.34808,17.395
+2016 World Series Game 3,2016,"Chicago Cubs, Cleveland Indians",7,517,408,0.003693931729646,0.3152285714285714,19.384
+2016 World Series Game 4,2016,"Chicago Cubs, Cleveland Indians",9,689,552,-0.0552624584569029,0.4154333333333333,16.705
+2016 World Series Game 5,2016,"Chicago Cubs, Cleveland Indians",10,1031,951,-0.0874078295744962,0.3886199999999999,23.638
+2016 World Series Game 6,2016,"Chicago Cubs, Cleveland Indians",9,1444,1128,-0.1081709080320191,0.5547,23.396
+2016 World Series Game 7,2016,"Chicago Cubs, Cleveland Indians",14,2509,1481,-0.0828811498013423,0.4720642857142857,40.045
+2015 World Series Game 1,2015,"Kansas City Royals, New York Mets",4,255,190,0.0655458675311616,0.781325,14.944
+2015 World Series Game 2,2015,"Kansas City Royals, New York Mets",5,309,288,0.088194269782505,0.6250600000000001,13.722
+2015 World Series Game 3,2015,"Kansas City Royals, New York Mets",4,247,267,0.1749479238082179,0.6894,13.205
+2015 World Series Game 4,2015,"Kansas City Royals, New York Mets",4,247,267,0.1749479238082179,0.6894,13.587
+2015 World Series Game 5,2015,"Kansas City Royals, New York Mets",3,170,233,0.1651068376068376,0.5874333333333334,17.206
+2014 World Series Game 1,2014,"San Francisco Giants, Kansas City Royals",0,0,0,0.0,0.0,12.191
+2014 World Series Game 2,2014,"San Francisco Giants, Kansas City Royals",1,1,1,-0.4,-0.4767,12.917
+2014 World Series Game 3,2014,"San Francisco Giants, Kansas City Royals",2,1,1,-0.4,-0.46775,12.133
+2014 World Series Game 4,2014,"San Francisco Giants, Kansas City Royals",3,1,2,-0.4000000000000001,-0.1212,10.742
+2014 World Series Game 5,2014,"San Francisco Giants, Kansas City Royals",3,1,2,-0.4000000000000001,-0.1212,12.635
+2014 World Series Game 6,2014,"San Francisco Giants, Kansas City Royals",3,1,2,-0.4000000000000001,-0.1212,13.372
+2014 World Series Game 7,2014,"San Francisco Giants, Kansas City Royals",4,964,1214,-0.209406887755102,0.3581499999999999,23.517
+2013 World Series Game 1,2013,"Boston Red Sox, St. Louis Cardinals",1,65,23,0.254,0.936,14.4
+2013 World Series Game 2,2013,"Boston Red Sox, St. Louis Cardinals",1,65,23,0.254,0.936,13.429
+2013 World Series Game 3,2013,"Boston Red Sox, St. Louis Cardinals",3,458,329,0.0481747635080968,0.3925,12.473
+2013 World Series Game 4,2013,"Boston Red Sox, St. Louis Cardinals",4,416,306,-0.0603234728234728,-0.0587999999999999,15.975
+2013 World Series Game 5,2013,"Boston Red Sox, St. Louis Cardinals",4,416,306,-0.0603234728234728,-0.0587999999999999,14.446
+2013 World Series Game 6,2013,"Boston Red Sox, St. Louis Cardinals",6,419,311,-0.0735489818823152,-0.0391999999999999,19.178
+2012 World Series Game 1,2012,"San Francisco Giants, Detroit Tigers",5,852,334,-0.0317518939393939,0.3411,12.24
+2012 World Series Game 2,2012,"San Francisco Giants, Detroit Tigers",6,1684,452,-0.0038746843434343,0.4336333333333333,12.34
+2012 World Series Game 3,2012,"San Francisco Giants, Detroit Tigers",7,2306,501,0.0160376082251082,0.4997285714285714,10.471
+2012 World Series Game 4,2012,"San Francisco Giants, Detroit Tigers",8,3413,688,0.030971827651515155,0.5493,15.485
