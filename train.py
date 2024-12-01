@@ -8,6 +8,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import matplotlib.pyplot as plt
 import joblib
+import shap
 
 # Set Random Seed
 def set_seed(seed=42):
@@ -57,9 +58,10 @@ pipeline = Pipeline([
 
 # Hyperparameter Tuning
 param_grid = {
-    'gbr__n_estimators': [50, 100, 200],
-    'gbr__learning_rate': [0.01, 0.05, 0.1],
-    'gbr__max_depth': [2, 3, 4],
+    'gbr__n_estimators': [100, 200, 300],
+    'gbr__learning_rate': [0.05, 0.1],
+    'gbr__max_depth': [3, 5],
+    'gbr__min_samples_split': [2, 5],
     'gbr__subsample': [0.8, 1.0],
 }
 
@@ -109,7 +111,12 @@ plt.show()
 
 # Feature Importance Visualization
 gbr_model = grid_search.best_estimator_.named_steps['gbr']
-feature_names = numerical_features + list(grid_search.best_estimator_.named_steps['preprocessor'].transformers_[1][1].get_feature_names_out())
+preprocessor_pipeline = grid_search.best_estimator_.named_steps['preprocessor']
+
+numerical_transformed_features = numerical_features
+categorical_transformed_features = preprocessor_pipeline.transformers_[1][1].get_feature_names_out(categorical_features)
+feature_names = list(numerical_transformed_features) + list(categorical_transformed_features)
+
 feature_importance = gbr_model.feature_importances_
 
 plt.figure(figsize=(10, 6))
@@ -118,3 +125,16 @@ plt.xlabel('Feature Importance')
 plt.title('Feature Importance Across Sports')
 plt.grid(True)
 plt.show()
+
+# SHAP Analysis
+# Transform Test Data
+X_test_transformed = preprocessor_pipeline.transform(X_test)
+
+# Initialize SHAP Explainer
+explainer = shap.Explainer(gbr_model, X_test_transformed)
+
+# Generate SHAP Values
+shap_values = explainer(X_test_transformed)
+
+# SHAP Summary Plot
+shap.summary_plot(shap_values, feature_names=feature_names)
