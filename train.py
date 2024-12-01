@@ -9,12 +9,26 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import matplotlib.pyplot as plt
 import joblib
 import shap
+import matplotlib as mpl
 
 # Set Random Seed
 def set_seed(seed=42):
     np.random.seed(seed)
 
 set_seed(42)
+
+# Publication Quality Settings
+mpl.rcParams.update({
+    "font.size": 10,
+    "font.family": "serif",
+    "axes.titlesize": 12,
+    "axes.labelsize": 10,
+    "xtick.labelsize": 9,
+    "ytick.labelsize": 9,
+    "figure.dpi": 300,
+    "legend.fontsize": 9,
+    "axes.grid": False
+})
 
 # Load Datasets
 files = ["World_Series.csv", "Super_Bowl.csv", "NBA_Finals.csv", "Stanley_Cup.csv", "MLS_Cup.csv"]
@@ -105,8 +119,8 @@ print(f"Root Mean Squared Error (RMSE): {rmse:.2f} million viewers")
 print(f"R^2 (Coefficient of Determination): {r2:.2f}")
 
 # Plot Actual vs Predicted
-plt.figure(figsize=(10, 6))
-plt.scatter(y_test_actual, y_pred_actual, alpha=0.7, label="Predicted vs Actual")
+plt.figure(figsize=(8, 6), dpi=300)
+plt.scatter(y_test_actual, y_pred_actual, alpha=0.7, label="Predicted vs Actual", color='blue')
 plt.plot(
     [min(y_test_actual), max(y_test_actual)],
     [min(y_test_actual), max(y_test_actual)],
@@ -118,16 +132,40 @@ plt.xlabel("Actual Viewership (Millions)")
 plt.ylabel("Predicted Viewership (Millions)")
 plt.title("Actual vs. Predicted Viewership")
 plt.legend()
-plt.grid(True)
+plt.savefig("actual_vs_predicted.png", bbox_inches="tight")
 plt.show()
 
 # SHAP Analysis
 gbr_model = grid_search.best_estimator_.named_steps['gbr']
-X_test_transformed = grid_search.best_estimator_.named_steps['preprocessor'].transform(X_test)
+
+# Properly Transform the Test Data
+preprocessor_pipeline = grid_search.best_estimator_.named_steps['preprocessor']
+X_test_transformed = preprocessor_pipeline.transform(X_test)
+
+# Feature Names for Transformed Data
+numerical_transformed_features = numerical_features
+categorical_transformed_features = preprocessor_pipeline.transformers_[1][1].get_feature_names_out(categorical_features)
+feature_names = list(numerical_transformed_features) + list(categorical_transformed_features)
 
 # Initialize SHAP Explainer
 explainer = shap.Explainer(gbr_model, X_test_transformed)
-shap_values = explainer(X_test_transformed)
+shap_values = explainer(X_test_transformed, check_additivity=False)
 
 # SHAP Bar Plot of Feature Importance
-shap.summary_plot(shap_values, feature_names=numerical_features + list(grid_search.best_estimator_.named_steps['preprocessor'].transformers_[1][1].get_feature_names_out()), plot_type="bar")
+plt.figure(figsize=(30, 12), dpi=300)  # Increased height for more vertical space
+shap.summary_plot(
+    shap_values,
+    feature_names=feature_names,  # Use full names
+    plot_type="bar",
+    show=False
+)
+
+# Adjust Font Sizes
+plt.title("SHAP Feature Importance", fontsize=8)
+plt.gca().tick_params(axis='both', which='major', labelsize=8)  # Adjust tick size
+
+# Use Only Tight Layout with Padding
+plt.tight_layout(pad=2.0)  # Add padding around the plot to prevent cutoff
+plt.savefig("shap_feature_importance_full_titles.png", bbox_inches="tight")
+plt.show()
+
