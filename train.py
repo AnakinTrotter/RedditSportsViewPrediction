@@ -27,11 +27,12 @@ for file in files:
 # Combine Datasets
 data = pd.concat(dfs, ignore_index=True)
 
-# Remove Outliers
-def remove_outliers(df, columns, factor=1.5):
+# Outlier Removal by Sport
+def remove_outliers_by_group(df, group_col, columns, factor=3.0):
     for col in columns:
-        Q1 = df[col].quantile(0.25)
-        Q3 = df[col].quantile(0.75)
+        grouped = df.groupby(group_col)
+        Q1 = grouped[col].transform(lambda x: x.quantile(0.25))
+        Q3 = grouped[col].transform(lambda x: x.quantile(0.75))
         IQR = Q3 - Q1
         lower_bound = Q1 - factor * IQR
         upper_bound = Q3 + factor * IQR
@@ -39,7 +40,11 @@ def remove_outliers(df, columns, factor=1.5):
     return df
 
 numerical_columns = ["Total Posts", "Total Comments", "Total Scores", "Avg Sentiment (TextBlob)", "Avg Sentiment (Vader)"]
-data = remove_outliers(data, numerical_columns)
+data = remove_outliers_by_group(data, 'Sport', numerical_columns)
+
+# Verify all Sports are Present
+print("Counts by Sport after outlier removal:")
+print(data['Sport'].value_counts())
 
 # Features and Target
 features = ["Total Posts", "Total Comments", "Total Scores", "Avg Sentiment (TextBlob)", "Avg Sentiment (Vader)", "Sport"]
@@ -99,10 +104,30 @@ print(f"Mean Absolute Error (MAE): {mae:.2f} million viewers")
 print(f"Root Mean Squared Error (RMSE): {rmse:.2f} million viewers")
 print(f"R^2 (Coefficient of Determination): {r2:.2f}")
 
+# Plot Actual vs Predicted
+plt.figure(figsize=(10, 6))
+plt.scatter(y_test_actual, y_pred_actual, alpha=0.7, label="Predicted vs Actual")
+plt.plot(
+    [min(y_test_actual), max(y_test_actual)],
+    [min(y_test_actual), max(y_test_actual)],
+    color="red",
+    linestyle="--",
+    label="Ideal Fit"
+)
+plt.xlabel("Actual Viewership (Millions)")
+plt.ylabel("Predicted Viewership (Millions)")
+plt.title("Actual vs. Predicted Viewership")
+plt.legend()
+plt.grid(True)
+plt.show()
+
 # SHAP Analysis
 gbr_model = grid_search.best_estimator_.named_steps['gbr']
 X_test_transformed = grid_search.best_estimator_.named_steps['preprocessor'].transform(X_test)
+
+# Initialize SHAP Explainer
 explainer = shap.Explainer(gbr_model, X_test_transformed)
 shap_values = explainer(X_test_transformed)
 
-shap.summary_plot(shap_values, feature_names=numerical_features + list(grid_search.best_estimator_.named_steps['preprocessor'].transformers_[1][1].get_feature_names_out()))
+# SHAP Bar Plot of Feature Importance
+shap.summary_plot(shap_values, feature_names=numerical_features + list(grid_search.best_estimator_.named_steps['preprocessor'].transformers_[1][1].get_feature_names_out()), plot_type="bar")
