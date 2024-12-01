@@ -2,9 +2,10 @@ import pandas as pd
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from torch.utils.data import DataLoader, Dataset, random_split
-from sklearn.metrics import mean_absolute_error, r2_score
-from sklearn.preprocessing import MinMaxScaler
+from torch.utils.data import DataLoader, Dataset, Subset
+from sklearn.preprocessing import MinMaxScaler, OneHotEncoder
+from sklearn.metrics import mean_absolute_error
+from sklearn.model_selection import KFold
 import numpy as np
 
 # Dataset Class
@@ -16,22 +17,39 @@ class RedditViewershipDataset(Dataset):
         
         # Merge datasets on 'Name'
         self.data = pd.merge(reddit_df, tv_data_df, on="Name")
-        
+
         # Feature Engineering: Add derived features
-        self.data["Avg Comments Per Post"] = self.data["Total Comments"] / self.data["Total Posts"]
-        self.data["Avg Score Per Post"] = self.data["Total Scores"] / self.data["Total Posts"]
-        
+        self.data["Total Engagement"] = self.data["Total Comments"] + self.data["Total Scores"]
+        self.data["Engagement Per Post"] = self.data["Total Engagement"] / self.data["Total Posts"]
+
+        # Add Sport Type feature
+        self.data["Sport Type"] = self.data["Name"].apply(self._extract_sport_type)
+
+        # One-Hot Encode Sport Type
+        sport_encoder = OneHotEncoder(sparse_output=False)
+        sport_encoded = sport_encoder.fit_transform(self.data[["Sport Type"]])
+        sport_encoded_df = pd.DataFrame(sport_encoded, columns=[f"Sport_{s}" for s in sport_encoder.categories_[0]])
+        self.data = pd.concat([self.data, sport_encoded_df], axis=1)
+
+        # One-Hot Encode Year
+        year_encoder = OneHotEncoder(sparse_output=False)
+        year_encoded = year_encoder.fit_transform(self.data[["Year"]])
+        year_encoded_df = pd.DataFrame(year_encoded, columns=[f"Year_{int(y)}" for y in year_encoder.categories_[0]])
+        self.data = pd.concat([self.data, year_encoded_df], axis=1)
+
         # Select features and target
-        features = self.data[[
-            "Year", "Total Posts", "Total Comments", "Total Scores",
-            "Avg Comments Per Post", "Avg Score Per Post"
-        ]]
-        target = self.data["Average Viewers (Millions)"]
+        feature_columns = [
+            "Total Posts", "Total Comments", "Total Scores",
+            "Total Engagement", "Engagement Per Post"
+        ] + list(sport_encoded_df.columns) + list(year_encoded_df.columns)
+
+        self.features = self.data[feature_columns].values
+        self.target = self.data["Average Viewers (Millions)"].values.reshape(-1, 1)
 
         # Normalize features using Min-Max Scaling
         scaler = MinMaxScaler()
-        self.features = torch.tensor(scaler.fit_transform(features), dtype=torch.float32)
-        self.target = torch.tensor(target.values.reshape(-1, 1), dtype=torch.float32)
+        self.features = torch.tensor(scaler.fit_transform(self.features), dtype=torch.float32)
+        self.target = torch.tensor(self.target, dtype=torch.float32)
 
     def __len__(self):
         return len(self.target)
@@ -39,36 +57,47 @@ class RedditViewershipDataset(Dataset):
     def __getitem__(self, idx):
         return self.features[idx], self.target[idx]
 
+    def _extract_sport_type(self, name):
+        """Extract sport type based on keywords in the Name column."""
+        if "World Series" in name:
+            return "MLB"
+        elif "Super Bowl" in name:
+            return "NFL"
+        elif "NBA" in name:
+            return "NBA"
+        elif "MLS" in name:
+            return "MLS"
+        else:
+            return "Other"
+
 # Model Definition
 class RegressionModel(nn.Module):
     def __init__(self, input_dim):
         super(RegressionModel, self).__init__()
         self.model = nn.Sequential(
-            nn.Linear(input_dim, 128),
+            nn.Linear(input_dim, 32),
             nn.ReLU(),
-            nn.Linear(128, 64),
+            nn.Dropout(0.4),  # Increased dropout for regularization
+            nn.Linear(32, 16),
             nn.ReLU(),
-            nn.Linear(64, 32),
-            nn.ReLU(),
-            nn.Linear(32, 1)  # Output is a single regression value
+            nn.Linear(16, 1)  # Output is a single regression value
         )
     
     def forward(self, x):
         return self.model(x)
 
 # Training Function
-def train_model(model, dataloader, criterion, optimizer, num_epochs):
-    for epoch in range(num_epochs):
-        model.train()
-        total_loss = 0
-        for features, target in dataloader:
-            optimizer.zero_grad()
-            predictions = model(features)
-            loss = criterion(predictions, target)
-            loss.backward()
-            optimizer.step()
-            total_loss += loss.item()
-        print(f"Epoch [{epoch+1}/{num_epochs}], Loss: {total_loss:.4f}")
+def train_model(model, dataloader, criterion, optimizer):
+    model.train()
+    total_loss = 0
+    for features, target in dataloader:
+        optimizer.zero_grad()
+        predictions = model(features)
+        loss = criterion(predictions, target)
+        loss.backward()
+        optimizer.step()
+        total_loss += loss.item()
+    return total_loss / len(dataloader)
 
 # Evaluation Function
 def evaluate_model(model, dataloader, criterion):
@@ -91,51 +120,63 @@ def evaluate_model(model, dataloader, criterion):
     # Calculate metrics
     rmse = np.sqrt(total_loss / len(dataloader.dataset))
     mae = mean_absolute_error(targets, predictions)
-    r2 = r2_score(targets, predictions)
 
-    print(f"Validation Loss (MSE): {total_loss:.4f}")
-    print(f"Validation RMSE: {rmse:.4f}")
-    print(f"Validation MAE: {mae:.4f}")
-    print(f"Validation R^2 Score: {r2:.4f}")
+    return total_loss / len(dataloader), rmse, mae
 
-# Main Function
+# Main Function with Cross-Validation
 def main():
     # Files
     reddit_metrics_file = "reddit_metrics.csv"
     tv_data_file = "tv_data.csv"
 
     # Hyperparameters
-    input_dim = 6  # Number of features
-    batch_size = 4
-    learning_rate = 0.0005  # Reduced learning rate for better convergence
-    num_epochs = 100  # Increased epochs for better learning
-    train_split_ratio = 0.8
+    batch_size = 8
+    learning_rate = 0.001
+    weight_decay = 1e-4  # L2 regularization
+    num_epochs = 50
+    num_folds = 5
 
-    # Dataset and DataLoader
+    # Dataset
     dataset = RedditViewershipDataset(reddit_metrics_file, tv_data_file)
-    train_size = int(train_split_ratio * len(dataset))
-    val_size = len(dataset) - train_size
-    train_dataset, val_dataset = random_split(dataset, [train_size, val_size])
+    input_dim = dataset.features.shape[1]  # Dynamically calculate input dimensions
 
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-    val_loader = DataLoader(val_dataset, batch_size=batch_size)
+    # Cross-Validation
+    kf = KFold(n_splits=num_folds, shuffle=True, random_state=42)
+    fold_results = []
 
-    # Model, Loss Function, Optimizer
-    model = RegressionModel(input_dim)
-    criterion = nn.MSELoss()  # Mean Squared Error for regression
-    optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+    for fold, (train_idx, val_idx) in enumerate(kf.split(dataset)):
+        print(f"\n--- Fold {fold + 1}/{num_folds} ---")
 
-    # Training
-    print("Starting Training...")
-    train_model(model, train_loader, criterion, optimizer, num_epochs)
+        # Create DataLoaders for this fold
+        train_subset = Subset(dataset, train_idx)
+        val_subset = Subset(dataset, val_idx)
+        train_loader = DataLoader(train_subset, batch_size=batch_size, shuffle=True)
+        val_loader = DataLoader(val_subset, batch_size=batch_size)
 
-    # Evaluation
-    print("Evaluating Model...")
-    evaluate_model(model, val_loader, criterion)
+        # Initialize model, loss, and optimizer
+        model = RegressionModel(input_dim)
+        criterion = nn.MSELoss()
+        optimizer = optim.Adam(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
 
-    # Save the model
-    torch.save(model.state_dict(), "regression_model.pth")
-    print("Model saved to regression_model.pth")
+        # Train model
+        for epoch in range(num_epochs):
+            train_loss = train_model(model, train_loader, criterion, optimizer)
+            print(f"Epoch [{epoch+1}/{num_epochs}], Train Loss: {train_loss:.4f}")
+
+        # Evaluate model
+        val_loss, rmse, mae = evaluate_model(model, val_loader, criterion)
+        print(f"Validation Loss: {val_loss:.4f}, RMSE: {rmse:.4f}, MAE: {mae:.4f}")
+        fold_results.append((val_loss, rmse, mae))
+
+    # Aggregate fold results
+    avg_loss = np.mean([r[0] for r in fold_results])
+    avg_rmse = np.mean([r[1] for r in fold_results])
+    avg_mae = np.mean([r[2] for r in fold_results])
+
+    print("\n--- Cross-Validation Results ---")
+    print(f"Average Validation Loss (MSE): {avg_loss:.4f}")
+    print(f"Average Validation RMSE: {avg_rmse:.4f}")
+    print(f"Average Validation MAE: {avg_mae:.4f}")
 
 if __name__ == "__main__":
     main()
