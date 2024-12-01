@@ -1,0 +1,175 @@
+Name,Teams,Start Datetime,Average Viewers (Millions)
+2024 World Series Game 1,"Los Angeles Dodgers, New York Yankees",2024-10-25T17:11:00-07:00,14.163
+2024 World Series Game 2,"Los Angeles Dodgers, New York Yankees",2024-10-26T17:15:00-07:00,13.713
+2024 World Series Game 3,"Los Angeles Dodgers, New York Yankees",2024-10-28T17:17:00-07:00,13.208
+2024 World Series Game 4,"Los Angeles Dodgers, New York Yankees",2024-10-29T17:08:00-07:00,16.275
+2024 World Series Game 5,"Los Angeles Dodgers, New York Yankees",2024-10-30T17:08:00-07:00,18.152
+2023 World Series Game 1,"Texas Rangers, Arizona Diamondbacks",2023-10-27T19:07:00-05:00,9.172
+2023 World Series Game 2,"Texas Rangers, Arizona Diamondbacks",2023-10-28T19:03:00-05:00,8.153
+2023 World Series Game 3,"Texas Rangers, Arizona Diamondbacks",2023-10-30T17:03:00-06:00,8.126
+2023 World Series Game 4,"Texas Rangers, Arizona Diamondbacks",2023-10-31T17:03:00-06:00,8.48
+2023 World Series Game 5,"Texas Rangers, Arizona Diamondbacks",2023-11-01T17:06:00-06:00,11.481
+2022 World Series Game 1,"Houston Astros, Philadelphia Phillies",2022-10-28T19:03:00-05:00,11.475
+2022 World Series Game 2,"Houston Astros, Philadelphia Phillies",2022-10-29T19:03:00-05:00,10.789
+2022 World Series Game 3,"Houston Astros, Philadelphia Phillies",2022-11-01T20:03:00-04:00,11.162
+2022 World Series Game 4,"Houston Astros, Philadelphia Phillies",2022-11-02T20:03:00-04:00,11.809
+2022 World Series Game 5,"Houston Astros, Philadelphia Phillies",2022-11-03T20:03:00-04:00,12.786
+2023 World Series Game 6,"Houston Astros, Philadelphia Phillies",2022-11-05T19:03:00-05:00,12.549
+2021 World Series Game 1,"Atlanta Braves, Houston Astros",2021-10-26T19:11:00-05:00,10.811
+2021 World Series Game 2,"Atlanta Braves, Houston Astros",2021-10-27T19:09:00-05:00,10.28
+2021 World Series Game 3,"Atlanta Braves, Houston Astros",2021-10-29T20:12:00-04:00,11.232
+2021 World Series Game 4,"Atlanta Braves, Houston Astros",2021-10-30T20:11:00-04:00,10.511
+2021 World Series Game 5,"Atlanta Braves, Houston Astros",2021-10-31T20:15:00-04:00,13.644
+2021 World Series Game 6,"Atlanta Braves, Houston Astros",2021-11-02T19:10:00-05:00,14.14
+2020 World Series Game 1,"Los Angeles Dodger, Tampa Bay Rays",2020-10-20T19:11:00-05:00,9.353
+2020 World Series Game 2,"Los Angeles Dodger, Tampa Bay Rays",2020-10-21T19:08:00-05:00,9.184
+2020 World Series Game 3,"Los Angeles Dodger, Tampa Bay Rays",2020-10-23T19:08:00-05:00,8.156
+2020 World Series Game 4,"Los Angeles Dodger, Tampa Bay Rays",2020-10-24T19:09:00-05:00,9.332
+2020 World Series Game 5,"Los Angeles Dodger, Tampa Bay Rays",2020-10-25T19:08:00-05:00,10.059
+2020 World Series Game 6,"Los Angeles Dodger, Tampa Bay Rays",2020-10-27T19:09:00-05:00,12.819
+2019 World Series Game 1,"Washington Nationals, Houston Astros",2019-10-22T19:10:00-05:00,12.194
+2019 World Series Game 2,"Washington Nationals, Houston Astros",2019-10-23T19:08:00-05:00,11.925
+2019 World Series Game 3,"Washington Nationals, Houston Astros",2019-10-25T20:07:00-04:00,12.22
+2019 World Series Game 4,"Washington Nationals, Houston Astros",2019-10-26T20:08:00-04:00,10.219
+2019 World Series Game 5,"Washington Nationals, Houston Astros",2019-10-27T20:08:00-04:00,11.39
+2019 World Series Game 6,"Washington Nationals, Houston Astros",2019-10-29T19:08:00-05:00,16.425
+2019 World Series Game 7,"Washington Nationals, Houston Astros",2019-10-30T19:08:00-05:00,23.013
+2018 World Series Game 1,"Boston Red Sox, Los Angeles Dodgers",2018-10-23T20:11:00-04:00,13.761
+2018 World Series Game 2,"Boston Red Sox, Los Angeles Dodgers",2018-10-24T20:10:00-04:00,13.458
+2018 World Series Game 3,"Boston Red Sox, Los Angeles Dodgers",2018-10-26T17:10:00-07:00,13.251
+2018 World Series Game 4,"Boston Red Sox, Los Angeles Dodgers",2018-10-27T17:11:00-07:00,13.563
+2018 World Series Game 5,"Boston Red Sox, Los Angeles Dodgers",2018-10-28T17:17:00-07:00,17.634
+2017 World Series Game 1,"Houston Astros, Los Angeles Dodgers",2017-10-24T17:11:00-07:00,14.968
+2017 World Series Game 2,"Houston Astros, Los Angeles Dodgers",2017-10-25T17:17:00-07:00,15.483
+2017 World Series Game 3,"Houston Astros, Los Angeles Dodgers",2017-10-27T19:21:00-05:00,15.676
+2017 World Series Game 4,"Houston Astros, Los Angeles Dodgers",2017-10-28T19:20:00-05:00,15.4
+2017 World Series Game 5,"Houston Astros, Los Angeles Dodgers",2017-10-29T19:21:00-05:00,18.94
+2017 World Series Game 6,"Houston Astros, Los Angeles Dodgers",2017-10-31T17:21:00-07:00,22.229
+2017 World Series Game 7,"Houston Astros, Los Angeles Dodgers",2017-11-01T17:21:00-07:00,28.24
+2016 World Series Game 1,"Chicago Cubs, Cleveland Indians",2016-10-25T20:10:00-04:00,19.368
+2016 World Series Game 2,"Chicago Cubs, Cleveland Indians",2016-10-26T19:08:00-04:00,17.395
+2016 World Series Game 3,"Chicago Cubs, Cleveland Indians",2016-10-28T19:08:00-05:00,19.384
+2016 World Series Game 4,"Chicago Cubs, Cleveland Indians",2016-10-29T19:09:00-05:00,16.705
+2016 World Series Game 5,"Chicago Cubs, Cleveland Indians",2016-10-30T19:17:00-05:00,23.638
+2016 World Series Game 6,"Chicago Cubs, Cleveland Indians",2016-11-01T20:10:00-04:00,23.396
+2016 World Series Game 7,"Chicago Cubs, Cleveland Indians",2016-11-02T20:02:00-04:00,40.045
+2015 World Series Game 1,"Kansas City Royals, New York Mets",2015-10-27T19:09:00-05:00,14.944
+2015 World Series Game 2,"Kansas City Royals, New York Mets",2015-10-28T19:08:00-05:00,13.722
+2015 World Series Game 3,"Kansas City Royals, New York Mets",2015-10-30T20:08:00-04:00,13.205
+2015 World Series Game 4,"Kansas City Royals, New York Mets",2015-10-31T20:08:00-04:00,13.587
+2015 World Series Game 5,"Kansas City Royals, New York Mets",2015-11-01T20:18:00-05:00,17.206
+2014 World Series Game 1,"San Francisco Giants, Kansas City Royals",2014-10-21T19:07:00-05:00,12.191
+2014 World Series Game 2,"San Francisco Giants, Kansas City Royals",2014-10-22T19:08:00-05:00,12.917
+2014 World Series Game 3,"San Francisco Giants, Kansas City Royals",2014-10-24T17:10:00-07:00,12.133
+2014 World Series Game 4,"San Francisco Giants, Kansas City Royals",2014-10-25T17:08:00-07:00,10.742
+2014 World Series Game 5,"San Francisco Giants, Kansas City Royals",2014-10-26T17:09:00-07:00,12.635
+2014 World Series Game 6,"San Francisco Giants, Kansas City Royals",2014-10-28T19:08:00-05:00,13.372
+2014 World Series Game 7,"San Francisco Giants, Kansas City Royals",2014-10-29T19:11:00-05:00,23.517
+2013 World Series Game 1,"Boston Red Sox, St. Louis Cardinals",2013-10-23T20:09:00-04:00,14.4
+2013 World Series Game 2,"Boston Red Sox, St. Louis Cardinals",2013-10-24T20:07:00-04:00,13.429
+2013 World Series Game 3,"Boston Red Sox, St. Louis Cardinals",2013-10-26T19:08:00-05:00,12.473
+2013 World Series Game 4,"Boston Red Sox, St. Louis Cardinals",2013-10-27T19:17:00-05:00,15.975
+2013 World Series Game 5,"Boston Red Sox, St. Louis Cardinals",2013-10-28T19:07:00-05:00,14.446
+2013 World Series Game 6,"Boston Red Sox, St. Louis Cardinals",2013-10-30T20:07:00-04:00,19.178
+2012 World Series Game 1,"San Francisco Giants, Detroit Tigers",2012-10-24T17:07:00-07:00,12.24
+2012 World Series Game 2,"San Francisco Giants, Detroit Tigers",2012-10-25T17:07:00-07:00,12.34
+2012 World Series Game 3,"San Francisco Giants, Detroit Tigers",2012-10-27T20:07:00-04:00,10.471
+2012 World Series Game 4,"San Francisco Giants, Detroit Tigers",2012-10-28T20:15:00-04:00,15.485
+Super Bowl XLVI,"New York Giants, New England Patriots",2012-02-05T18:30:00-05:00,111.35
+Super Bowl XLVII,"Baltimore Ravens, San Francisco 48ers",2013-02-03T17:31:00-06:00,108.69
+Super Bowl XLVIII,"Seattle Seahwaks, Denver Broncos",2014-02-02T18:32:00-05:00,112.19
+Super Bowl XLIX,"New England Patriots, Seattle Seahawks",2015-02-01T16:30:00-07:00,114.44
+Super Bowl 50,"Carolina Panthers, Denver Broncos ",2017-02-07T15:39:00-08:00,111.86
+Super Bowl LI,"New England Patriots, Atlanta Falcons ",2017-02-05T18:30:00-05:00,111.32
+Super Bowl LII,"Philadelphia Eagles, New England Patriots",2018-02-04T17:31:00-06:00,103.47
+Super Bowl LIII,"New England Patriots, Los Angeles Rams",2019-02-03T18:32:00-05:00,98.48
+Super Bowl LIV,"San Francisco 49ers, Kansas City Chiefs",2020-02-02T18:41:00-05:00,101.32
+Super Bowl LV,"Kansas City Chiefs, Tampa Bay Buccaneers",2021-02-07T18:37:00-05:00,95.2
+Super Bowl LVI,"Los Angeles Rams, Cincinnati Bengals",2022-02-13T15:34:00-08:00,99.18
+Super Bowl LVII,"Kansas City Chiefs, Philadelphia Eagles",2023-02-12T16:43:00-07:00,114.21
+Super Bowl LVIII,"San Francisco 49ers, Kansas City Chiefs",2024-02-11T15:40:00-08:00,121.5
+2024 NBA Finals Game 1,"Boston Celtics, Dallas Mavericks ",2024-06-06T20:30:00-04:00,10.99
+2024 NBA Finals Game 2,"Boston Celtics, Dallas Mavericks ",2024-06-09T20:00:00-04:00,12.31
+2024 NBA Finals Game 3,"Boston Celtics, Dallas Mavericks ",2024-06-12T20:30:00-04:00,11.43
+2024 NBA Finals Game 4,"Boston Celtics, Dallas Mavericks ",2024-06-14T20:30:00-04:00,9.62
+2024 NBA Finals Game 5,"Boston Celtics, Dallas Mavericks ",2024-06-17T20:30:00-04:00,12.22
+2023 NBA Finals Game 1,"Denver Nuggets, Miami Heat",2023-06-01T20:30:00-04:00,11.58
+2023 NBA Finals Game 2,"Denver Nuggets, Miami Heat",2023-06-04T20:00:00-04:00,11.91
+2023 NBA Finals Game 3,"Denver Nuggets, Miami Heat",2023-06-07T20:30:00-04:00,11.24
+2023 NBA Finals Game 4,"Denver Nuggets, Miami Heat",2023-06-09T20:30:00-04:00,10.41
+2023 NBA Finals Game 5,"Denver Nuggets, Miami Heat",2023-06-12T20:30:00-04:00,13.08
+2022 NBA Finals Game 1,"Golden State Warriors, Boston Celtics",2022-06-02T21:00:00-04:00,11.9
+2022 NBA Finals Game 2,"Golden State Warriors, Boston Celtics",2022-06-05T20:00:00-04:00,11.91
+2022 NBA Finals Game 3,"Golden State Warriors, Boston Celtics",2022-06-08T21:00:00-04:00,11.52
+2022 NBA Finals Game 4,"Golden State Warriors, Boston Celtics",2022-06-10T21:00:00-04:00,12.06
+2022 NBA Finals Game 5,"Golden State Warriors, Boston Celtics",2022-06-13T21:00:00-04:00,13.03
+2022 NBA Finals Game 6,"Golden State Warriors, Boston Celtics",2022-06-16T21:00:00-04:00,13.99
+2021 NBA Finals Game 1,"Milwaukee Bucks, Phoenix Suns ",2021-07-06T21:00:00-04:00,8.56
+2021 NBA Finals Game 2,"Milwaukee Bucks, Phoenix Suns ",2021-07-08T21:00:00-04:00,9.38
+2021 NBA Finals Game 3,"Milwaukee Bucks, Phoenix Suns ",2021-07-11T20:00:00-04:00,9.02
+2021 NBA Finals Game 4,"Milwaukee Bucks, Phoenix Suns ",2021-07-14T21:00:00-04:00,10.25
+2021 NBA Finals Game 5,"Milwaukee Bucks, Phoenix Suns ",2021-07-17T21:00:00-04:00,9.55
+2021 NBA Finals Game 6,"Milwaukee Bucks, Phoenix Suns ",2021-07-20T21:00:00-04:00,12.52
+2020 NBA Finals Game 1,"Los Angeles Lakers, Miami Heat",2020-09-30T21:00:00-04:00,7.41
+2020 NBA Finals Game 2,"Los Angeles Lakers, Miami Heat",2020-09-30T21:00:00-04:00,6.61
+2020 NBA Finals Game 3,"Los Angeles Lakers, Miami Heat",2020-10-04T19:30:00-04:00,5.94
+2020 NBA Finals Game 4,"Los Angeles Lakers, Miami Heat",2020-10-06T21:00:00-04:00,7.54
+2020 NBA Finals Game 5,"Los Angeles Lakers, Miami Heat",2020-10-09T21:00:00-04:00,889
+2020 NBA Finals Game 6,"Los Angeles Lakers, Miami Heat",2020-10-11T19:30:00-04:00,8.29
+2019 NBA Finals Game 1,"Toronto Raptors, Golden State Warriors",2019-05-30T21:00:00-04:00,13.51
+2019 NBA Finals Game 2,"Toronto Raptors, Golden State Warriors",2019-06-02T20:00:00-04:00,14.05
+2019 NBA Finals Game 3,"Toronto Raptors, Golden State Warriors",2019-06-05T21:00:00-04:00,13.44
+2019 NBA Finals Game 4,"Toronto Raptors, Golden State Warriors",2019-06-07T21:00:00-04:00,13.16
+2019 NBA Finals Game 5,"Toronto Raptors, Golden State Warriors",2019-06-10T21:00:00-04:00,18.34
+2019 NBA Finals Game 6,"Toronto Raptors, Golden State Warriors",2019-06-13T21:00:00-04:00,18.34
+2018 NBA Finals Game 1,"Golden State Warriors, Cleveland Cavaliers",2019-05-31T21:00:00-04:00,17.67
+2018 NBA Finals Game 2,"Golden State Warriors, Cleveland Cavaliers",2019-06-03T20:00:00-04:00,18.47
+2018 NBA Finals Game 3,"Golden State Warriors, Cleveland Cavaliers",2019-06-06T21:00:00-04:00,17.85
+2018 NBA Finals Game 4,"Golden State Warriors, Cleveland Cavaliers",2019-06-08T21:00:00-04:00,16.24
+2017 NBA Finals Game 1,"Golden State Warriors, Cleveland Cavaliers",2017-06-01T21:00:00-04:00,18.7
+2017 NBA Finals Game 2,"Golden State Warriors, Cleveland Cavaliers",2017-06-04T20:00:00-04:00,19.69
+2017 NBA Finals Game 3,"Golden State Warriors, Cleveland Cavaliers",2017-06-07T21:00:00-04:00,20.05
+2017 NBA Finals Game 4,"Golden State Warriors, Cleveland Cavaliers",2017-06-09T21:00:00-04:00,19.01
+2017 NBA Finals Game 5,"Golden State Warriors, Cleveland Cavaliers",2017-06-12T21:00:00-04:00,24.47
+2016 NBA Finals Game 1,"Golden State Warriors, Cleveland Cavaliers",2016-06-02T21:00:00-04:00,19.2
+2016 NBA Finals Game 2,"Golden State Warriors, Cleveland Cavaliers",2016-06-05T20:00:00-04:00,17.49
+2016 NBA Finals Game 3,"Golden State Warriors, Cleveland Cavaliers",2016-06-08T21:00:00-04:00,16.47
+2016 NBA Finals Game 4,"Golden State Warriors, Cleveland Cavaliers",2016-06-10T21:00:00-04:00,16.57
+2016 NBA Finals Game 5,"Golden State Warriors, Cleveland Cavaliers",2016-06-13T21:00:00-04:00,20.53
+2016 NBA Finals Game 6,"Golden State Warriors, Cleveland Cavaliers",2016-06-16T21:00:00-04:00,20.7
+2016 NBA Finals Game 7,"Golden State Warriors, Cleveland Cavaliers",2016-06-19T20:00:00-04:00,31.02
+2015 NBA Finals Game 1,"Golden State Warriors, Cleveland Cavaliers",2015-06-04T21:00:00-04:00,17.77
+2015 NBA Finals Game 2,"Golden State Warriors, Cleveland Cavaliers",2015-06-07T20:00:00-05:00,19.17
+2015 NBA Finals Game 3,"Golden State Warriors, Cleveland Cavaliers",2015-06-09T21:00:00-05:00,18.77
+2015 NBA Finals Game 4,"Golden State Warriors, Cleveland Cavaliers",2015-06-11T21:00:00-05:00,19.84
+2015 NBA Finals Game 5,"Golden State Warriors, Cleveland Cavaliers",2015-06-14T20:00:00-05:00,20.86
+2015 NBA Finals Game 6,"Golden State Warriors, Cleveland Cavaliers",2015-06-16T21:00:00-05:00,23.25
+2014 NBA Finals Game 1,"San Antonio Spurs, Miami Heat",2014-06-05T21:00:00-04:00,14.85
+2014 NBA Finals Game 2,"San Antonio Spurs, Miami Heat",2014-06-08T20:00:00-04:00,15.13
+2014 NBA Finals Game 3,"San Antonio Spurs, Miami Heat",2014-06-10T21:00:00-04:00,14.78
+2014 NBA Finals Game 4,"San Antonio Spurs, Miami Heat",2014-06-12T21:00:00-04:00,14.96
+2014 NBA Finals Game 5,"San Antonio Spurs, Miami Heat",2014-06-15T20:00:00-04:00,18
+2013 NBA Finals Game 1,"San Antonio Spurs, Miami Heat",2013-06-06T21:00:00-04:00,14.24
+2013 NBA Finals Game 2,"San Antonio Spurs, Miami Heat",2013-06-09T20:00:00-04:00,14.57
+2013 NBA Finals Game 3,"San Antonio Spurs, Miami Heat",2013-06-11T21:00:00-04:00,14.05
+2013 NBA Finals Game 4,"San Antonio Spurs, Miami Heat",2013-06-13T21:00:00-04:00,16.23
+2013 NBA Finals Game 5,"San Antonio Spurs, Miami Heat",2013-06-16T20:00:00-04:00,16.27
+2013 NBA Finals Game 6,"San Antonio Spurs, Miami Heat",2013-06-18T21:00:00-04:00,20.64
+2013 NBA Finals Game 7,"San Antonio Spurs, Miami Heat",2013-06-20T21:00:00-04:00,26.32
+2012 NBA Finals Game 1,"Miami Heat, Oklahoma City Thunder",2012-06-12T21:00:00-04:00,16.2
+2012 NBA Finals Game 2,"Miami Heat, Oklahoma City Thunder",2012-06-14T21:00:00-04:00,16.67
+2012 NBA Finals Game 3,"Miami Heat, Oklahoma City Thunder",2012-06-17T20:00:00-04:00,15.55
+2012 NBA Finals Game 4,"Miami Heat, Oklahoma City Thunder",2012-06-19T21:00:00-04:00,17.5
+2012 NBA Finals Game 5,"Miami Heat, Oklahoma City Thunder",2012-06-21T21:00:00-04:00,18.46
+MLS Cup 2023,"Columbus Crew, Los Angeles FC",2023-12-09T16:00:00-05:00,0.9
+MLS Cup 2022,"Los Angeles FC, Philadelphia Union",2022-11-05T13:00:00-07:00,2.2
+MLS Cup 2021,"Portland Timbers, New York City FC",2021-12-11T12:00:00-08:00,1.5
+MLS Cup 2020,"Columbus Crew SC, Seattle Sounders FC",2020-12-12T20:30:00-05:00,1.7
+MLS Cup 2019,"Seattle Sounders FC, Toronto FC",2019-11-10T12:00:00-08:00,1.3
+MLS Cup 2018,"Atlanta United FC, Portland Timbers",2018-12-08T20:00:00-05:00,1.8
+MLS Cup 2017,"Toronto FC, Seattle Sounders FC",2017-12-09T16:00:00-05:00,1.1
+MLS Cup 2016,"Toronto FC, Seattle Sounders FC",2016-12-10T20:00:00-05:00,2
+MLS Cup 2015,"Columbus Crew SC, Portland Timbers",2015-12-06T16:00:00-05:00,1.2
+MLS Cup 2014,"LA Galaxy, New England Revolution",2014-12-07T12:26:00-08:00,1.9
+MLS Cup 2013,"Sporting Kansas City, Real Salt Lake",2013-12-07T15:00:00-06:00,1
+MLS Cup 2012,"Los Angeles Galaxy, Houston Dynamo",2012-12-01T13:30:00-08:00,0.8
