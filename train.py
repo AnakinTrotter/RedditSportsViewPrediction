@@ -1,182 +1,120 @@
 import pandas as pd
-import torch
-import torch.nn as nn
-import torch.optim as optim
-from torch.utils.data import DataLoader, Dataset, Subset
-from sklearn.preprocessing import MinMaxScaler, OneHotEncoder
-from sklearn.metrics import mean_absolute_error
-from sklearn.model_selection import KFold
 import numpy as np
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.preprocessing import MinMaxScaler, OneHotEncoder
+from sklearn.compose import ColumnTransformer
+from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.pipeline import Pipeline
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+import matplotlib.pyplot as plt
+import joblib
 
-# Dataset Class
-class RedditViewershipDataset(Dataset):
-    def __init__(self, reddit_metrics_file, tv_data_file):
-        # Load data
-        reddit_df = pd.read_csv(reddit_metrics_file)
-        tv_data_df = pd.read_csv(tv_data_file)
-        
-        # Merge datasets on 'Name'
-        self.data = pd.merge(reddit_df, tv_data_df, on="Name")
+# Set Random Seed
+def set_seed(seed=42):
+    np.random.seed(seed)
 
-        # Feature Engineering: Add derived features
-        self.data["Total Engagement"] = self.data["Total Comments"] + self.data["Total Scores"]
-        self.data["Engagement Per Post"] = self.data["Total Engagement"] / self.data["Total Posts"]
+set_seed(42)
 
-        # Add Sport Type feature
-        self.data["Sport Type"] = self.data["Name"].apply(self._extract_sport_type)
+# Load Datasets
+files = ["World_Series.csv", "Super_Bowl.csv", "NBA_Finals.csv", "Stanley_Cup.csv", "MLS_Cup.csv"]
+dfs = []
+for file in files:
+    df = pd.read_csv(file)
+    df['Sport'] = file.split('.')[0]  # Add Sport Column
+    dfs.append(df)
 
-        # One-Hot Encode Sport Type
-        sport_encoder = OneHotEncoder(sparse_output=False)
-        sport_encoded = sport_encoder.fit_transform(self.data[["Sport Type"]])
-        sport_encoded_df = pd.DataFrame(sport_encoded, columns=[f"Sport_{s}" for s in sport_encoder.categories_[0]])
-        self.data = pd.concat([self.data, sport_encoded_df], axis=1)
+# Combine Datasets
+data = pd.concat(dfs, ignore_index=True)
 
-        # One-Hot Encode Year
-        year_encoder = OneHotEncoder(sparse_output=False)
-        year_encoded = year_encoder.fit_transform(self.data[["Year"]])
-        year_encoded_df = pd.DataFrame(year_encoded, columns=[f"Year_{int(y)}" for y in year_encoder.categories_[0]])
-        self.data = pd.concat([self.data, year_encoded_df], axis=1)
+# Features and Target
+features = ["Total Posts", "Total Comments", "Total Scores", "Avg Sentiment (TextBlob)", "Avg Sentiment (Vader)", "Sport"]
+target = "Viewers (Millions)"
 
-        # Select features and target
-        feature_columns = [
-            "Total Posts", "Total Comments", "Total Scores",
-            "Total Engagement", "Engagement Per Post"
-        ] + list(sport_encoded_df.columns) + list(year_encoded_df.columns)
+# Log-transform Target to Handle Skewness
+data[target] = np.log1p(data[target])
 
-        self.features = self.data[feature_columns].values
-        self.target = self.data["Average Viewers (Millions)"].values.reshape(-1, 1)
+# Train/Test Split
+X_train, X_test, y_train, y_test = train_test_split(
+    data[features], data[target], test_size=0.2, random_state=42
+)
 
-        # Normalize features using Min-Max Scaling
-        scaler = MinMaxScaler()
-        self.features = torch.tensor(scaler.fit_transform(self.features), dtype=torch.float32)
-        self.target = torch.tensor(self.target, dtype=torch.float32)
+# Preprocessing
+categorical_features = ["Sport"]
+numerical_features = ["Total Posts", "Total Comments", "Total Scores", "Avg Sentiment (TextBlob)", "Avg Sentiment (Vader)"]
 
-    def __len__(self):
-        return len(self.target)
+preprocessor = ColumnTransformer(
+    transformers=[
+        ('num', MinMaxScaler(), numerical_features),
+        ('cat', OneHotEncoder(drop='first'), categorical_features)
+    ]
+)
 
-    def __getitem__(self, idx):
-        return self.features[idx], self.target[idx]
+# Pipeline
+pipeline = Pipeline([
+    ('preprocessor', preprocessor),
+    ('gbr', GradientBoostingRegressor(random_state=42))
+])
 
-    def _extract_sport_type(self, name):
-        """Extract sport type based on keywords in the Name column."""
-        if "World Series" in name:
-            return "MLB"
-        elif "Super Bowl" in name:
-            return "NFL"
-        elif "NBA" in name:
-            return "NBA"
-        elif "MLS" in name:
-            return "MLS"
-        else:
-            return "Other"
+# Hyperparameter Tuning
+param_grid = {
+    'gbr__n_estimators': [50, 100, 200],
+    'gbr__learning_rate': [0.01, 0.05, 0.1],
+    'gbr__max_depth': [2, 3, 4],
+    'gbr__subsample': [0.8, 1.0],
+}
 
-# Model Definition
-class RegressionModel(nn.Module):
-    def __init__(self, input_dim):
-        super(RegressionModel, self).__init__()
-        self.model = nn.Sequential(
-            nn.Linear(input_dim, 32),
-            nn.ReLU(),
-            nn.Dropout(0.4),  # Increased dropout for regularization
-            nn.Linear(32, 16),
-            nn.ReLU(),
-            nn.Linear(16, 1)  # Output is a single regression value
-        )
-    
-    def forward(self, x):
-        return self.model(x)
+grid_search = GridSearchCV(
+    pipeline, param_grid, cv=5, scoring='neg_mean_absolute_error', n_jobs=-1
+)
+grid_search.fit(X_train, y_train)
 
-# Training Function
-def train_model(model, dataloader, criterion, optimizer):
-    model.train()
-    total_loss = 0
-    for features, target in dataloader:
-        optimizer.zero_grad()
-        predictions = model(features)
-        loss = criterion(predictions, target)
-        loss.backward()
-        optimizer.step()
-        total_loss += loss.item()
-    return total_loss / len(dataloader)
+print(f"Best parameters: {grid_search.best_params_}")
 
-# Evaluation Function
-def evaluate_model(model, dataloader, criterion):
-    model.eval()
-    total_loss = 0
-    predictions = []
-    targets = []
+# Save the Model
+joblib.dump(grid_search.best_estimator_, 'cross_sport_model.pkl')
+print("Model saved to 'cross_sport_model.pkl'.")
 
-    with torch.no_grad():
-        for features, target in dataloader:
-            preds = model(features)
-            loss = criterion(preds, target)
-            total_loss += loss.item()
-            predictions.append(preds.numpy())
-            targets.append(target.numpy())
+# Evaluate on Test Set
+y_pred = grid_search.predict(X_test)
 
-    predictions = np.vstack(predictions)
-    targets = np.vstack(targets)
+# Inverse log-transform
+y_test_actual = np.expm1(y_test)
+y_pred_actual = np.expm1(y_pred)
 
-    # Calculate metrics
-    rmse = np.sqrt(total_loss / len(dataloader.dataset))
-    mae = mean_absolute_error(targets, predictions)
+# Metrics
+mae = mean_absolute_error(y_test_actual, y_pred_actual)
+rmse = np.sqrt(mean_squared_error(y_test_actual, y_pred_actual))
+r2 = r2_score(y_test_actual, y_pred_actual)
 
-    return total_loss / len(dataloader), rmse, mae
+print(f"Mean Absolute Error (MAE): {mae:.2f} million viewers")
+print(f"Root Mean Squared Error (RMSE): {rmse:.2f} million viewers")
+print(f"R^2 (Coefficient of Determination): {r2:.2f}")
 
-# Main Function with Cross-Validation
-def main():
-    # Files
-    reddit_metrics_file = "reddit_metrics.csv"
-    tv_data_file = "tv_data.csv"
+# Plot Actual vs Predicted
+plt.figure(figsize=(10, 6))
+plt.scatter(y_test_actual, y_pred_actual, alpha=0.7, label="Predicted vs Actual")
+plt.plot(
+    [min(y_test_actual), max(y_test_actual)],
+    [min(y_test_actual), max(y_test_actual)],
+    color="red",
+    linestyle="--",
+    label="Ideal Fit"
+)
+plt.xlabel("Actual Viewership (Millions)")
+plt.ylabel("Predicted Viewership (Millions)")
+plt.title("Actual vs. Predicted Viewership")
+plt.legend()
+plt.grid(True)
+plt.show()
 
-    # Hyperparameters
-    batch_size = 8
-    learning_rate = 0.001
-    weight_decay = 1e-4  # L2 regularization
-    num_epochs = 50
-    num_folds = 5
+# Feature Importance Visualization
+gbr_model = grid_search.best_estimator_.named_steps['gbr']
+feature_names = numerical_features + list(grid_search.best_estimator_.named_steps['preprocessor'].transformers_[1][1].get_feature_names_out())
+feature_importance = gbr_model.feature_importances_
 
-    # Dataset
-    dataset = RedditViewershipDataset(reddit_metrics_file, tv_data_file)
-    input_dim = dataset.features.shape[1]  # Dynamically calculate input dimensions
-
-    # Cross-Validation
-    kf = KFold(n_splits=num_folds, shuffle=True, random_state=42)
-    fold_results = []
-
-    for fold, (train_idx, val_idx) in enumerate(kf.split(dataset)):
-        print(f"\n--- Fold {fold + 1}/{num_folds} ---")
-
-        # Create DataLoaders for this fold
-        train_subset = Subset(dataset, train_idx)
-        val_subset = Subset(dataset, val_idx)
-        train_loader = DataLoader(train_subset, batch_size=batch_size, shuffle=True)
-        val_loader = DataLoader(val_subset, batch_size=batch_size)
-
-        # Initialize model, loss, and optimizer
-        model = RegressionModel(input_dim)
-        criterion = nn.MSELoss()
-        optimizer = optim.Adam(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
-
-        # Train model
-        for epoch in range(num_epochs):
-            train_loss = train_model(model, train_loader, criterion, optimizer)
-            print(f"Epoch [{epoch+1}/{num_epochs}], Train Loss: {train_loss:.4f}")
-
-        # Evaluate model
-        val_loss, rmse, mae = evaluate_model(model, val_loader, criterion)
-        print(f"Validation Loss: {val_loss:.4f}, RMSE: {rmse:.4f}, MAE: {mae:.4f}")
-        fold_results.append((val_loss, rmse, mae))
-
-    # Aggregate fold results
-    avg_loss = np.mean([r[0] for r in fold_results])
-    avg_rmse = np.mean([r[1] for r in fold_results])
-    avg_mae = np.mean([r[2] for r in fold_results])
-
-    print("\n--- Cross-Validation Results ---")
-    print(f"Average Validation Loss (MSE): {avg_loss:.4f}")
-    print(f"Average Validation RMSE: {avg_rmse:.4f}")
-    print(f"Average Validation MAE: {avg_mae:.4f}")
-
-if __name__ == "__main__":
-    main()
+plt.figure(figsize=(10, 6))
+plt.barh(feature_names, feature_importance, color='skyblue')
+plt.xlabel('Feature Importance')
+plt.title('Feature Importance Across Sports')
+plt.grid(True)
+plt.show()

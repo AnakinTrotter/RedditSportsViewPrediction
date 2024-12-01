@@ -1,0 +1,77 @@
+Name,Year,Teams,Total Posts,Total Comments,Total Scores,Avg Sentiment (TextBlob),Avg Sentiment (Vader),Viewers (Millions)
+2012 Stanley Cup Finals Game 1,2012,"Los Angeles Kings, New Jersey Devils",4,28,27,0.0337886947708376,0.1065,2.979
+2012 Stanley Cup Finals Game 2,2012,"Los Angeles Kings, New Jersey Devils",5,30,12,-0.1087497410761873,-0.0165,2.9
+2012 Stanley Cup Finals Game 3,2012,"Los Angeles Kings, New Jersey Devils",8,29,34,0.0175329656525596,0.2315125,2.9
+2012 Stanley Cup Finals Game 4,2012,"Los Angeles Kings, New Jersey Devils",9,20,27,0.2581088416187286,0.4746444444444444,1.743
+2012 Stanley Cup Finals Game 5,2012,"Los Angeles Kings, New Jersey Devils",7,13,22,-0.1095214045214045,0.1604571428571428,2.069
+2012 Stanley Cup Finals Game 6,2012,"Los Angeles Kings, New Jersey Devils",6,8,22,-0.0490249719416386,-0.0535166666666666,3.331
+2013 Stanley Cup Finals Game 1,2013,"Chicago Blackhawks, Boston Bruins",18,214,137,0.0460929232804232,0.1946777777777777,5.762
+2013 Stanley Cup Finals Game 2,2013,"Chicago Blackhawks, Boston Bruins",18,110,405,0.01566644004144,0.2804611111111111,6.358
+2013 Stanley Cup Finals Game 3,2013,"Chicago Blackhawks, Boston Bruins",6,64,401,0.0242108585858585,0.4263666666666666,3.964
+2013 Stanley Cup Finals Game 4,2013,"Chicago Blackhawks, Boston Bruins",7,58,208,-0.1680816326530612,0.2925142857142857,4.001
+2013 Stanley Cup Finals Game 5,2013,"Chicago Blackhawks, Boston Bruins",6,41,57,0.0347424242424242,0.3899333333333333,6.459
+2013 Stanley Cup Finals Game 6,2013,"Chicago Blackhawks, Boston Bruins",8,89,317,-0.0435048701298701,0.38555,8.16
+2014 Stanley Cup Finals Game 1,2014,"Los Angeles Kings, New York Rangers",14,37,57,0.0573593073593073,0.125,4.697
+2014 Stanley Cup Finals Game 2,2014,"Los Angeles Kings, New York Rangers",7,40,255,0.0597402597402597,0.2992285714285714,4.777
+2014 Stanley Cup Finals Game 3,2014,"Los Angeles Kings, New York Rangers",10,34,34,0.0324747474747474,0.11343,6.413
+2014 Stanley Cup Finals Game 4,2014,"Los Angeles Kings, New York Rangers",8,6,20,-0.1077020202020202,0.0860625,2.893
+2014 Stanley Cup Finals Game 5,2014,"Los Angeles Kings, New York Rangers",2,7,2,-0.1954545454545455,0.08895,6.021
+2015 Stanley Cup Finals Game 1,2015,"Chicago Blackhawks, Tampa Bay Lightning",16,15,42,0.0922821969696969,0.02899375,5.53
+2015 Stanley Cup Finals Game 2,2015,"Chicago Blackhawks, Tampa Bay Lightning",10,380,266,0.0082386363636363,0.1968599999999999,5.547
+2015 Stanley Cup Finals Game 3,2015,"Chicago Blackhawks, Tampa Bay Lightning",8,361,222,-0.1204951298701298,0.0602749999999999,6.549
+2015 Stanley Cup Finals Game 4,2015,"Chicago Blackhawks, Tampa Bay Lightning",8,92,169,-0.1397163050364269,0.2931499999999999,3.896
+2015 Stanley Cup Finals Game 5,2015,"Chicago Blackhawks, Tampa Bay Lightning",8,46,69,0.1294940898944805,0.2273749999999999,5.267
+2015 Stanley Cup Finals Game 6,2015,"Chicago Blackhawks, Tampa Bay Lightning",10,115,599,-0.0703671198593073,0.3755199999999999,8.005
+2016 Stanley Cup Finals Game 1,2016,"Pittsburgh Penguins, San Jose Sharks",18,64,72,0.0632991314241314,0.1843833333333333,4.001
+2016 Stanley Cup Finals Game 2,2016,"Pittsburgh Penguins, San Jose Sharks",17,32,64,-0.0003276312936556,0.2538764705882353,4.081
+2016 Stanley Cup Finals Game 3,2016,"Pittsburgh Penguins, San Jose Sharks",5,28,44,-0.344047619047619,0.0157399999999999,2.507
+2016 Stanley Cup Finals Game 4,2016,"Pittsburgh Penguins, San Jose Sharks",9,29,244,-0.0764309764309764,0.0218333333333333,2.789
+2016 Stanley Cup Finals Game 5,2016,"Pittsburgh Penguins, San Jose Sharks",5,40,11,0.2028194738078459,0.4906799999999999,4.234
+2016 Stanley Cup Finals Game 6,2016,"Pittsburgh Penguins, San Jose Sharks",7,0,8,-0.0859307359307359,0.0837,5.009
+2017 Stanley Cup Finals Game 1,2017,"Pittsburgh Penguins, Nashville Predators",11,68,265,0.0350059031877213,0.1113909090909091,4.668
+2017 Stanley Cup Finals Game 2,2017,"Pittsburgh Penguins, Nashville Predators",15,217,298,-0.0401738015071348,-0.0420266666666666,4.854
+2017 Stanley Cup Finals Game 3,2017,"Pittsburgh Penguins, Nashville Predators",9,52,103,-0.172053872053872,0.0515444444444444,3.18
+2017 Stanley Cup Finals Game 4,2017,"Pittsburgh Penguins, Nashville Predators",7,78,417,0.2177655677655677,0.1835285714285714,2.953
+2017 Stanley Cup Finals Game 5,2017,"Pittsburgh Penguins, Nashville Predators",12,58,152,0.0674957959430615,0.0133499999999999,5.654
+2017 Stanley Cup Finals Game 6,2017,"Pittsburgh Penguins, Nashville Predators",10,94,103,-0.0637585227272727,0.32524,6.985
+2018 Stanley Cup Finals Game 1,2018,"Washington Capitals, Vegas Golden Knights",14,42,424,0.0399350649350649,0.1445714285714285,5.195
+2018 Stanley Cup Finals Game 2,2018,"Washington Capitals, Vegas Golden Knights",24,108,574,0.0715323811026935,0.1472958333333333,3.648
+2018 Stanley Cup Finals Game 3,2018,"Washington Capitals, Vegas Golden Knights",8,111,455,-0.0023674242424242,0.18845,3.439
+2018 Stanley Cup Finals Game 4,2018,"Washington Capitals, Vegas Golden Knights",10,55,105,0.038050505050505,0.2753299999999999,5.061
+2018 Stanley Cup Finals Game 5,2018,"Washington Capitals, Vegas Golden Knights",6,72,67,0.2179229797979798,0.38375,6.588
+2019 Stanley Cup Finals Game 1,2019,"St. Louis Blues, Boston Bruins",9,61,133,0.1068055555555555,0.2564444444444445,5.333
+2019 Stanley Cup Finals Game 2,2019,"St. Louis Blues, Boston Bruins",16,177,414,0.0920698051948051,0.27464375,5.251
+2019 Stanley Cup Finals Game 3,2019,"St. Louis Blues, Boston Bruins",8,179,602,0.0406259018759018,0.2951749999999999,3.386
+2019 Stanley Cup Finals Game 4,2019,"St. Louis Blues, Boston Bruins",8,141,544,0.00625,-0.0315749999999999,2.93
+2019 Stanley Cup Finals Game 5,2019,"St. Louis Blues, Boston Bruins",8,12,156,0.0546874999999999,0.1210375,5.128
+2019 Stanley Cup Finals Game 6,2019,"St. Louis Blues, Boston Bruins",11,47,66,0.1431818181818182,0.0453454545454545,5.443
+2019 Stanley Cup Finals Game 7,2019,"St. Louis Blues, Boston Bruins",13,112,263,0.0460662069412069,0.4063461538461538,8.723
+2020 Stanley Cup Finals Game 1,2020,"Tampa Bay Lightning, Dallas Stars",17,300,1154,0.0433365871601165,0.0588058823529411,2.034
+2020 Stanley Cup Finals Game 2,2020,"Tampa Bay Lightning, Dallas Stars",5,204,624,0.0920778533635676,0.15936,2.115
+2020 Stanley Cup Finals Game 3,2020,"Tampa Bay Lightning, Dallas Stars",4,194,621,-0.0093239795918367,-0.1055749999999999,1.137
+2020 Stanley Cup Finals Game 4,2020,"Tampa Bay Lightning, Dallas Stars",7,50,519,0.0873866213151927,-0.1165285714285714,1.145
+2020 Stanley Cup Finals Game 5,2020,"Tampa Bay Lightning, Dallas Stars",12,121,634,0.1183402939652939,0.178925,2.216
+2020 Stanley Cup Finals Game 6,2020,"Tampa Bay Lightning, Dallas Stars",9,103,123,0.1295481409023075,0.4859111111111112,2.713
+2021 Stanley Cup Finals Game 1,2021,"Tampa Bay Lightning, Montreal Canadiens",10,218,1522,0.2830169552669552,0.4130600000000001,2.405
+2021 Stanley Cup Finals Game 2,2021,"Tampa Bay Lightning, Montreal Canadiens",13,114,1057,0.080519203019203,0.2500076923076923,1.569
+2021 Stanley Cup Finals Game 3,2021,"Tampa Bay Lightning, Montreal Canadiens",6,196,807,0.1522002923976608,0.3067333333333333,1.649
+2021 Stanley Cup Finals Game 4,2021,"Tampa Bay Lightning, Montreal Canadiens",10,342,1829,0.2247767279017279,0.47992,2.378
+2021 Stanley Cup Finals Game 5,2021,"Tampa Bay Lightning, Montreal Canadiens",11,149,147,0.1124843149274967,0.3363454545454545,2.92
+2022 Stanley Cup Finals Game 1,2022,"Tampa Bay Lightning, Colorado Avalanche",21,286,1229,0.1302070601100156,0.3096571428571428,4.2
+2022 Stanley Cup Finals Game 2,2022,"Tampa Bay Lightning, Colorado Avalanche",12,937,1987,-0.0227421847788227,0.2239,3.747
+2022 Stanley Cup Finals Game 3,2022,"Tampa Bay Lightning, Colorado Avalanche",11,795,835,-0.0727701231627965,0.0946272727272727,4.103
+2022 Stanley Cup Finals Game 4,2022,"Tampa Bay Lightning, Colorado Avalanche",5,387,161,0.0112121212121212,-0.16178,4.599
+2022 Stanley Cup Finals Game 5,2022,"Tampa Bay Lightning, Colorado Avalanche",13,576,707,0.1475276806526806,0.3993538461538461,5.145
+2022 Stanley Cup Finals Game 6,2022,"Tampa Bay Lightning, Colorado Avalanche",8,159,264,0.1069839015151515,0.5105625,5.817
+2023 Stanley Cup Finals Game 1,2023,"Florida Panthers, Vegas Golden Knights",19,367,1636,0.2259273182957393,0.4054631578947368,2.753
+2023 Stanley Cup Finals Game 2,2023,"Florida Panthers, Vegas Golden Knights",21,568,1729,0.1593726134032256,0.3406666666666667,2.445
+2023 Stanley Cup Finals Game 3,2023,"Florida Panthers, Vegas Golden Knights",18,796,3312,0.011194150499706,0.1481277777777777,2.688
+2023 Stanley Cup Finals Game 4,2023,"Florida Panthers, Vegas Golden Knights",14,273,1206,0.0717037724180581,0.0123214285714285,2.562
+2023 Stanley Cup Finals Game 5,2023,"Florida Panthers, Vegas Golden Knights",22,382,2685,0.0099483104741808,0.0869045454545454,2.721
+2024 Stanley Cup Finals Game 1,2024,"Edmonton Oilers, Florida Panthers",45,21,45,0.1166557863189441,0.1912377777777777,3.115
+2024 Stanley Cup Finals Game 2,2024,"Edmonton Oilers, Florida Panthers",42,21,44,0.0560620257457663,0.1861690476190475,3.558
+2024 Stanley Cup Finals Game 3,2024,"Edmonton Oilers, Florida Panthers",12,0,12,-0.0105681818181818,0.327525,3.352
+2024 Stanley Cup Finals Game 4,2024,"Edmonton Oilers, Florida Panthers",20,14,131,-0.0310476928374655,0.127655,3.085
+2024 Stanley Cup Finals Game 5,2024,"Edmonton Oilers, Florida Panthers",24,14,135,0.090859556321204,0.2316791666666667,4.15
+2024 Stanley Cup Finals Game 6,2024,"Edmonton Oilers, Florida Panthers",16,0,16,0.1560608878968253,0.3009625,4.237
+2024 Stanley Cup Finals Game 7,2024,"Edmonton Oilers, Florida Panthers",22,99,49,0.06105576827573582,0.37544545454545464,7.662

@@ -21,12 +21,12 @@ Name,Teams,Start Datetime,Average Viewers (Millions)
 2021 World Series Game 4,"Atlanta Braves, Houston Astros",2021-10-30T20:11:00-04:00,10.511
 2021 World Series Game 5,"Atlanta Braves, Houston Astros",2021-10-31T20:15:00-04:00,13.644
 2021 World Series Game 6,"Atlanta Braves, Houston Astros",2021-11-02T19:10:00-05:00,14.14
-2020 World Series Game 1,"Los Angeles Dodger, Tampa Bay Rays",2020-10-20T19:11:00-05:00,9.353
-2020 World Series Game 2,"Los Angeles Dodger, Tampa Bay Rays",2020-10-21T19:08:00-05:00,9.184
-2020 World Series Game 3,"Los Angeles Dodger, Tampa Bay Rays",2020-10-23T19:08:00-05:00,8.156
-2020 World Series Game 4,"Los Angeles Dodger, Tampa Bay Rays",2020-10-24T19:09:00-05:00,9.332
-2020 World Series Game 5,"Los Angeles Dodger, Tampa Bay Rays",2020-10-25T19:08:00-05:00,10.059
-2020 World Series Game 6,"Los Angeles Dodger, Tampa Bay Rays",2020-10-27T19:09:00-05:00,12.819
+2020 World Series Game 1,"Los Angeles Dodgers, Tampa Bay Rays",2020-10-20T19:11:00-05:00,9.353
+2020 World Series Game 2,"Los Angeles Dodgers, Tampa Bay Rays",2020-10-21T19:08:00-05:00,9.184
+2020 World Series Game 3,"Los Angeles Dodgers, Tampa Bay Rays",2020-10-23T19:08:00-05:00,8.156
+2020 World Series Game 4,"Los Angeles Dodgers, Tampa Bay Rays",2020-10-24T19:09:00-05:00,9.332
+2020 World Series Game 5,"Los Angeles Dodgers, Tampa Bay Rays",2020-10-25T19:08:00-05:00,10.059
+2020 World Series Game 6,"Los Angeles Dodgers, Tampa Bay Rays",2020-10-27T19:09:00-05:00,12.819
 2019 World Series Game 1,"Washington Nationals, Houston Astros",2019-10-22T19:10:00-05:00,12.194
 2019 World Series Game 2,"Washington Nationals, Houston Astros",2019-10-23T19:08:00-05:00,11.925
 2019 World Series Game 3,"Washington Nationals, Houston Astros",2019-10-25T20:07:00-04:00,12.22
@@ -76,8 +76,8 @@ Name,Teams,Start Datetime,Average Viewers (Millions)
 2012 World Series Game 3,"San Francisco Giants, Detroit Tigers",2012-10-27T20:07:00-04:00,10.471
 2012 World Series Game 4,"San Francisco Giants, Detroit Tigers",2012-10-28T20:15:00-04:00,15.485
 Super Bowl XLVI,"New York Giants, New England Patriots",2012-02-05T18:30:00-05:00,111.35
-Super Bowl XLVII,"Baltimore Ravens, San Francisco 48ers",2013-02-03T17:31:00-06:00,108.69
-Super Bowl XLVIII,"Seattle Seahwaks, Denver Broncos",2014-02-02T18:32:00-05:00,112.19
+Super Bowl XLVII,"Baltimore Ravens, San Francisco 49ers",2013-02-03T17:31:00-06:00,108.69
+Super Bowl XLVIII,"Seattle Seahawks, Denver Broncos",2014-02-02T18:32:00-05:00,112.19
 Super Bowl XLIX,"New England Patriots, Seattle Seahawks",2015-02-01T16:30:00-07:00,114.44
 Super Bowl 50,"Carolina Panthers, Denver Broncos ",2017-02-07T15:39:00-08:00,111.86
 Super Bowl LI,"New England Patriots, Atlanta Falcons ",2017-02-05T18:30:00-05:00,111.32
@@ -173,3 +173,79 @@ MLS Cup 2015,"Columbus Crew SC, Portland Timbers",2015-12-06T16:00:00-05:00,1.2
 MLS Cup 2014,"LA Galaxy, New England Revolution",2014-12-07T12:26:00-08:00,1.9
 MLS Cup 2013,"Sporting Kansas City, Real Salt Lake",2013-12-07T15:00:00-06:00,1
 MLS Cup 2012,"Los Angeles Galaxy, Houston Dynamo",2012-12-01T13:30:00-08:00,0.8
+2012 Stanley Cup Finals Game 1,"Los Angeles Kings, New Jersey Devils",2012-05-30T20:00:00-04:00,2.979
+2012 Stanley Cup Finals Game 2,"Los Angeles Kings, New Jersey Devils",2012-06-02T20:00:00-04:00,2.9
+2012 Stanley Cup Finals Game 3,"Los Angeles Kings, New Jersey Devils",2012-06-04T20:00:00-04:00,2.9
+2012 Stanley Cup Finals Game 4,"Los Angeles Kings, New Jersey Devils",2012-06-06T20:00:00-04:00,1.743
+2012 Stanley Cup Finals Game 5,"Los Angeles Kings, New Jersey Devils",2012-06-09T20:00:00-04:00,2.069
+2012 Stanley Cup Finals Game 6,"Los Angeles Kings, New Jersey Devils",2012-06-11T20:00:00-04:00,3.331
+2013 Stanley Cup Finals Game 1,"Chicago Blackhawks, Boston Bruins",2013-06-12T20:00:00-04:00,5.762
+2013 Stanley Cup Finals Game 2,"Chicago Blackhawks, Boston Bruins",2013-06-15T20:00:00-04:00,6.358
+2013 Stanley Cup Finals Game 3,"Chicago Blackhawks, Boston Bruins",2013-06-17T20:00:00-04:00,3.964
+2013 Stanley Cup Finals Game 4,"Chicago Blackhawks, Boston Bruins",2013-06-19T20:00:00-04:00,4.001
+2013 Stanley Cup Finals Game 5,"Chicago Blackhawks, Boston Bruins",2013-06-22T20:00:00-04:00,6.459
+2013 Stanley Cup Finals Game 6,"Chicago Blackhawks, Boston Bruins",2013-06-24T20:00:00-04:00,8.16
+2014 Stanley Cup Finals Game 1,"Los Angeles Kings, New York Rangers",2014-06-04T20:00:00-04:00,4.697
+2014 Stanley Cup Finals Game 2,"Los Angeles Kings, New York Rangers",2014-06-07T20:00:00-04:00,4.777
+2014 Stanley Cup Finals Game 3,"Los Angeles Kings, New York Rangers",2014-06-09T20:00:00-04:00,6.413
+2014 Stanley Cup Finals Game 4,"Los Angeles Kings, New York Rangers",2014-06-11T20:00:00-04:00,2.893
+2014 Stanley Cup Finals Game 5,"Los Angeles Kings, New York Rangers",2014-06-13T20:00:00-04:00,6.021
+2015 Stanley Cup Finals Game 1,"Chicago Blackhawks, Tampa Bay Lightning",2015-06-03T20:00:00-04:00,5.53
+2015 Stanley Cup Finals Game 2,"Chicago Blackhawks, Tampa Bay Lightning",2015-06-06T20:00:00-04:00,5.547
+2015 Stanley Cup Finals Game 3,"Chicago Blackhawks, Tampa Bay Lightning",2015-06-08T20:00:00-04:00,6.549
+2015 Stanley Cup Finals Game 4,"Chicago Blackhawks, Tampa Bay Lightning",2015-06-10T20:00:00-04:00,3.896
+2015 Stanley Cup Finals Game 5,"Chicago Blackhawks, Tampa Bay Lightning",2015-06-13T20:00:00-04:00,5.267
+2015 Stanley Cup Finals Game 6,"Chicago Blackhawks, Tampa Bay Lightning",2015-06-15T20:00:00-04:00,8.005
+2016 Stanley Cup Finals Game 1,"Pittsburgh Penguins, San Jose Sharks",2016-05-30T20:00:00-04:00,4.001
+2016 Stanley Cup Finals Game 2,"Pittsburgh Penguins, San Jose Sharks",2016-06-01T20:00:00-04:00,4.081
+2016 Stanley Cup Finals Game 3,"Pittsburgh Penguins, San Jose Sharks",2016-06-04T20:00:00-04:00,2.507
+2016 Stanley Cup Finals Game 4,"Pittsburgh Penguins, San Jose Sharks",2016-06-06T20:00:00-04:00,2.789
+2016 Stanley Cup Finals Game 5,"Pittsburgh Penguins, San Jose Sharks",2016-06-09T20:00:00-04:00,4.234
+2016 Stanley Cup Finals Game 6,"Pittsburgh Penguins, San Jose Sharks",2016-06-12T20:00:00-04:00,5.009
+2017 Stanley Cup Finals Game 1,"Pittsburgh Penguins, Nashville Predators",2017-05-29T20:00:00-04:00,4.668
+2017 Stanley Cup Finals Game 2,"Pittsburgh Penguins, Nashville Predators",2017-05-31T20:00:00-04:00,4.854
+2017 Stanley Cup Finals Game 3,"Pittsburgh Penguins, Nashville Predators",2017-06-03T20:00:00-04:00,3.18
+2017 Stanley Cup Finals Game 4,"Pittsburgh Penguins, Nashville Predators",2017-06-05T20:00:00-04:00,2.953
+2017 Stanley Cup Finals Game 5,"Pittsburgh Penguins, Nashville Predators",2017-06-08T20:00:00-04:00,5.654
+2017 Stanley Cup Finals Game 6,"Pittsburgh Penguins, Nashville Predators",2017-06-11T20:00:00-04:00,6.985
+2018 Stanley Cup Finals Game 1,"Washington Capitals, Vegas Golden Knights",2018-05-28T20:00:00-04:00,5.195
+2018 Stanley Cup Finals Game 2,"Washington Capitals, Vegas Golden Knights",2018-05-30T20:00:00-04:00,3.648
+2018 Stanley Cup Finals Game 3,"Washington Capitals, Vegas Golden Knights",2018-06-02T20:00:00-04:00,3.439
+2018 Stanley Cup Finals Game 4,"Washington Capitals, Vegas Golden Knights",2018-06-04T20:00:00-04:00,5.061
+2018 Stanley Cup Finals Game 5,"Washington Capitals, Vegas Golden Knights",2018-06-07T20:00:00-04:00,6.588
+2019 Stanley Cup Finals Game 1,"St. Louis Blues, Boston Bruins",2019-05-27T20:00:00-04:00,5.333
+2019 Stanley Cup Finals Game 2,"St. Louis Blues, Boston Bruins",2019-05-29T20:00:00-04:00,5.251
+2019 Stanley Cup Finals Game 3,"St. Louis Blues, Boston Bruins",2019-06-01T20:00:00-04:00,3.386
+2019 Stanley Cup Finals Game 4,"St. Louis Blues, Boston Bruins",2019-06-03T20:00:00-04:00,2.93
+2019 Stanley Cup Finals Game 5,"St. Louis Blues, Boston Bruins",2019-06-06T20:00:00-04:00,5.128
+2019 Stanley Cup Finals Game 6,"St. Louis Blues, Boston Bruins",2019-06-09T20:00:00-04:00,5.443
+2019 Stanley Cup Finals Game 7,"St. Louis Blues, Boston Bruins",2019-06-12T20:00:00-04:00,8.723
+2020 Stanley Cup Finals Game 1,"Tampa Bay Lightning, Dallas Stars",2020-09-20T20:00:00-04:00,2.034
+2020 Stanley Cup Finals Game 2,"Tampa Bay Lightning, Dallas Stars",2020-09-22T20:00:00-04:00,2.115
+2020 Stanley Cup Finals Game 3,"Tampa Bay Lightning, Dallas Stars",2020-09-23T20:00:00-04:00,1.137
+2020 Stanley Cup Finals Game 4,"Tampa Bay Lightning, Dallas Stars",2020-09-25T20:00:00-04:00,1.145
+2020 Stanley Cup Finals Game 5,"Tampa Bay Lightning, Dallas Stars",2020-09-26T20:00:00-04:00,2.216
+2020 Stanley Cup Finals Game 6,"Tampa Bay Lightning, Dallas Stars",2020-09-28T20:00:00-04:00,2.713
+2021 Stanley Cup Finals Game 1,"Tampa Bay Lightning, Montreal Canadiens",2021-06-28T20:00:00-04:00,2.405
+2021 Stanley Cup Finals Game 2,"Tampa Bay Lightning, Montreal Canadiens",2021-06-30T20:00:00-04:00,1.569
+2021 Stanley Cup Finals Game 3,"Tampa Bay Lightning, Montreal Canadiens",2021-07-02T20:00:00-04:00,1.649
+2021 Stanley Cup Finals Game 4,"Tampa Bay Lightning, Montreal Canadiens",2021-07-05T20:00:00-04:00,2.378
+2021 Stanley Cup Finals Game 5,"Tampa Bay Lightning, Montreal Canadiens",2021-07-07T20:00:00-04:00,2.92
+2022 Stanley Cup Finals Game 1,"Tampa Bay Lightning, Colorado Avalanche",2022-06-15T20:00:00-04:00,4.2
+2022 Stanley Cup Finals Game 2,"Tampa Bay Lightning, Colorado Avalanche",2022-06-18T20:00:00-04:00,3.747
+2022 Stanley Cup Finals Game 3,"Tampa Bay Lightning, Colorado Avalanche",2022-06-20T20:00:00-04:00,4.103
+2022 Stanley Cup Finals Game 4,"Tampa Bay Lightning, Colorado Avalanche",2022-06-22T20:00:00-04:00,4.599
+2022 Stanley Cup Finals Game 5,"Tampa Bay Lightning, Colorado Avalanche",2022-06-24T20:00:00-04:00,5.145
+2022 Stanley Cup Finals Game 6,"Tampa Bay Lightning, Colorado Avalanche",2022-06-26T20:00:00-04:00,5.817
+2023 Stanley Cup Finals Game 1,"Florida Panthers, Vegas Golden Knights",2023-06-03T20:00:00-04:00,2.753
+2023 Stanley Cup Finals Game 2,"Florida Panthers, Vegas Golden Knights",2023-06-05T20:00:00-04:00,2.445
+2023 Stanley Cup Finals Game 3,"Florida Panthers, Vegas Golden Knights",2023-06-07T20:00:00-04:00,2.688
+2023 Stanley Cup Finals Game 4,"Florida Panthers, Vegas Golden Knights",2023-06-09T20:00:00-04:00,2.562
+2023 Stanley Cup Finals Game 5,"Florida Panthers, Vegas Golden Knights",2023-06-11T20:00:00-04:00,2.721
+2024 Stanley Cup Finals Game 1,"Edmonton Oilers, Florida Panthers",2024-06-03T20:00:00-04:00,3.115
+2024 Stanley Cup Finals Game 2,"Edmonton Oilers, Florida Panthers",2024-06-05T20:00:00-04:00,3.558
+2024 Stanley Cup Finals Game 3,"Edmonton Oilers, Florida Panthers",2024-06-07T20:00:00-04:00,3.352
+2024 Stanley Cup Finals Game 4,"Edmonton Oilers, Florida Panthers",2024-06-09T20:00:00-04:00,3.085
+2024 Stanley Cup Finals Game 5,"Edmonton Oilers, Florida Panthers",2024-06-11T20:00:00-04:00,4.15
+2024 Stanley Cup Finals Game 6,"Edmonton Oilers, Florida Panthers",2024-06-13T20:00:00-04:00,4.237
+2024 Stanley Cup Finals Game 7,"Edmonton Oilers, Florida Panthers",2024-06-15T20:00:00-04:00,7.662

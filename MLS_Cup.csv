@@ -1,0 +1,13 @@
+Name,Year,Teams,Total Posts,Total Comments,Total Scores,Avg Sentiment (TextBlob),Avg Sentiment (Vader),Viewers (Millions)
+MLS Cup 2023,2023,"Columbus Crew, Los Angeles FC",1,0,1,0.0041666666666666,0.0,0.9
+MLS Cup 2022,2022,"Los Angeles FC, Philadelphia Union",5,328,951,-0.0135331632653061,0.02574,2.2
+MLS Cup 2021,2021,"Portland Timbers, New York City FC",5,535,189,0.0920164742664742,0.34116,1.5
+MLS Cup 2020,2020,"Columbus Crew SC, Seattle Sounders FC",2,129,162,0.0528273809523809,0.31245,1.7
+MLS Cup 2019,2019,"Seattle Sounders FC, Toronto FC",1,28,35,0.0,0.0,1.3
+MLS Cup 2018,2018,"Atlanta United FC, Portland Timbers",9,910,571,-0.0367087767275033,0.3892222222222222,1.8
+MLS Cup 2017,2017,"Toronto FC, Seattle Sounders FC",3,393,298,0.0348958333333333,0.2198999999999999,1.1
+MLS Cup 2016,2016,"Toronto FC, Seattle Sounders FC",9,3075,1074,0.163566957174148,0.2042333333333333,2.0
+MLS Cup 2015,2015,"Columbus Crew SC, Portland Timbers",6,35,18,0.15006684727017,0.2704666666666667,1.2
+MLS Cup 2014,2014,"LA Galaxy, New England Revolution",10,502,495,0.0541055243998425,0.06156,1.9
+MLS Cup 2013,2013,"Sporting Kansas City, Real Salt Lake",1,1048,367,0.0358653549382716,0.9648,1.0
+MLS Cup 2012,2012,"Los Angeles Galaxy, Houston Dynamo",4,85,74,0.016578615098351943,0.5320750000000001,0.8
