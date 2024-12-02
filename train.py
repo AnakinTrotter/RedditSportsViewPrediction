@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import joblib
 import shap
 import matplotlib as mpl
+import seaborn as sns
 
 # Set Random Seed
 def set_seed(seed=42):
@@ -169,3 +170,18 @@ plt.tight_layout(pad=2.0)  # Add padding around the plot to prevent cutoff
 plt.savefig("shap_feature_importance_full_titles.png", bbox_inches="tight")
 plt.show()
 
+numerical_data = data[numerical_features]
+
+# Calculate the correlation matrix
+correlation_matrix = numerical_data.corr()
+
+# Plot the correlation matrix as a heatmap
+plt.figure(figsize=(8, 6), dpi=300)
+sns.heatmap(correlation_matrix, annot=True, fmt=".2f", cmap="coolwarm", cbar=True, square=True)
+
+plt.title("Feature Correlation Matrix", fontsize=12)
+plt.xticks(rotation=45, ha="right", fontsize=9)  # Rotate x-axis labels for readability
+plt.yticks(fontsize=9)  # Adjust y-axis label size
+plt.tight_layout()  # Adjust layout to fit titles and labels
+plt.savefig("feature_correlation_matrix.png", bbox_inches="tight")
+plt.show()

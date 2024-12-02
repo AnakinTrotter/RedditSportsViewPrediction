@@ -51,6 +51,18 @@ results_df = pd.DataFrame([results])
 results_df.to_csv("evaluation_results.csv", index=False)
 print("Evaluation results saved to 'evaluation_results.csv'.")
 
+# Combine Predictions with Actual Values for Display
+comparison_df = pd.DataFrame({
+    "Name": data["Name"],  # Use Sport as the game name
+    "Predicted Viewership (Millions)": y_pred,
+    "Actual Viewership (Millions)": y_actual,
+    "Error (Millions)": np.abs(y_actual - y_pred)  # Absolute error
+})
+
+# Save the comparison table to CSV
+comparison_df.to_csv("predicted_vs_actual_with_error.csv", index=False)
+print("Predicted vs Actual values with errors saved to 'predicted_vs_actual_with_error.csv'.")
+
 # Plot Actual vs Predicted
 plt.figure(figsize=(8, 6), dpi=300)
 plt.scatter(y_actual, y_pred, alpha=0.7, label="Predicted vs Actual", color="blue")
